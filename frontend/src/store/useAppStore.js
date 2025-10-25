@@ -21,8 +21,22 @@ export const useAppStore = create((set, get) => ({
   // Pantry & suggestions
   pantry: [], // { name, type: 'meat'|'produce'|'other', freshness: 'today'|'soon'|'ok' }
   plan: null,
+  recipes: [], //harker added
   loading: false,
 
+  fetchRecipes: async () => {
+    try{
+      const res = await fetch("http://localhost:8080/api/search", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ limit: 6 })
+      });
+    const data = await res.json();
+    set({ recipes: data.recipes || [] });
+  } catch (err) {
+    console.error("Failed to fetch recipes:", err);
+  }
+  },
   // Mutators
   setProfile: (patch) => set((s) => ({ profile: { ...s.profile, ...patch } })),
   setPref: (key, value) =>
@@ -35,6 +49,9 @@ export const useAppStore = create((set, get) => ({
 
   // Very simple suggestion heuristic (mock)
   suggestRecipes: () => {
+    /* FIXMEwhen we wanna use Danni's
+    const pool = get().recipes; */
+    
     const { prefs } = get().profile;
     const pantry = get().pantry;
     // tiny mock recipe pool
