@@ -6,6 +6,14 @@ export default function Plan() {
   const onChat = (msg) => {
     // later: send to backend/LLM; for now just log
     console.log("chat:", msg);
+    /*
+    when we want to use Danni's
+    const { fetchChatResponse } = useAppStore();
+
+    useEffect(() => {
+      fetchRecipes();
+    }, []);
+    */
   };
 
   return (
