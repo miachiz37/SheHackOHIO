@@ -1,11 +1,21 @@
 import IngredientInput from "../components/IngredientInput";
 import ChatBotBox from "../components/ChatBotBox";
 import Suggestions from "../components/Suggestions";
+import { useEffect } from "react";
+import { useAppStore } from "../store/useAppStore"; // FIXME when we wanna use Danni's
 
 export default function Plan() {
   const onChat = (msg) => {
     // later: send to backend/LLM; for now just log
     console.log("chat:", msg);
+    /*
+    when we want to use Danni's
+    const { fetchChatResponse } = useAppStore();
+
+    useEffect(() => {
+      fetchRecipes();
+    }, []);
+    */
   };
 
   return (
