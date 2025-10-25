@@ -1,0 +1,23 @@
+{
+  "name": "shehackohio",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/miachiz37/SheHackOHIO.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/miachiz37/SheHackOHIO/issues"
+  },
+  "homepage": "https://github.com/miachiz37/SheHackOHIO#readme",
+  "dependencies": {
+    "firebase": "^12.4.0"
+  }
+}
