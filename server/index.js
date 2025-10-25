@@ -3,7 +3,7 @@ import express from "express";
 import cors from "cors";
 
 const app = express();
-app.use(cors());
+app.use(cors({ origin: "http://localhost:5173" }));
 app.use(express.json());
 
 const PORT = process.env.PORT || 8080;
@@ -58,6 +58,12 @@ app.post("/api/search", (req, res) => {
   })).slice(0, limit);
 
   res.json({ recipes: results });
+});
+
+app.get("/health", (req, res) => res.json({ ok: true }));
+
+app.get("/ping", (req, res) => {
+  res.json({ msg: "pong from backend" });
 });
 
 app.listen(PORT, () => console.log(`PantryPal API listening on :${PORT}`));
