@@ -1,5 +1,5 @@
 from datasets import load_dataset
-
+from OpenSourceFood import OpenFoodFactsClient
 
 # Load the full dataset
 recipes = load_dataset("racineai/OGC_Cooking_Recipes")["train"]
@@ -61,3 +61,4 @@ def retrieve_recipes(ingredient_list, sensitivities, max_results=15):
 
     # Return recipes ranked 4 through max_results
     return [r for _, r in matches[3:max_results]]
+
