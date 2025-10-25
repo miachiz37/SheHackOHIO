@@ -1,6 +1,8 @@
 import IngredientInput from "../components/IngredientInput";
 import ChatBotBox from "../components/ChatBotBox";
 import Suggestions from "../components/Suggestions";
+import { useEffect } from "react";
+import { useAppStore } from "../store/useAppStore"; // FIXME when we wanna use Danni's
 
 export default function Plan() {
   const onChat = (msg) => {
