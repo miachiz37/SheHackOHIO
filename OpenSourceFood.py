@@ -38,7 +38,7 @@ class OpenFoodFactsClient:
         return product.get("product_name", "Unknown")
 
 
-    # Classify food type based on catagories this is also based on sensitivities
+    # Classify food type based on catagories this is also based on sensitivi
     def classify_food_type(self, categories):
        
         if any("fruit" in tag for tag in categories):
@@ -53,3 +53,4 @@ class OpenFoodFactsClient:
             return "nuts"
         else:
             return "other"
+        
