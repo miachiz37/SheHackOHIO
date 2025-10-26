@@ -14,7 +14,7 @@ const firebaseConfig = {
   apiKey: "AIzaSyAT2I6hyDrDmYtinQ1Tcre9lGWC4Qa-pqE",
   authDomain: "pantrypalfoodcompanion.firebaseapp.com",
   projectId: "pantrypalfoodcompanion",
-  storageBucket: "pantrypalfoodcompanion.firebasestorage.app",
+  storageBucket: "pantrypalfoodcompanion.appspot.com",
   messagingSenderId: "658772088923",
   appId: "1:658772088923:web:0002e59e976261c124077e",
   measurementId: "G-X5X2WTSNKT"
