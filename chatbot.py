@@ -1,3 +1,4 @@
+from OpenSourceFood import OpenFoodFactsClient
 from recipesData import retrieve_recipes
 from OllamaManager import ask_ollama
 
@@ -7,7 +8,8 @@ def handle_user_message(message):
     client = OpenFoodFactsClient()
 
     # Try to enrich the user's question with relevant recipe examples
-    retrieved_recipes = retrieve_recipes(message)
+    retrieved_recipes = retrieve_recipes([message], sensitivities=[], max_results=5)
+
 
     # Try to enrich with nutrition info if the message mentions a food
     products = client.search(message)
