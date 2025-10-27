@@ -1,6 +1,12 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+ /* Frontend/src/index.css */
+@import "tailwindcss";
+
+/* Your custom theme (Tailwind v4) */
+@theme {
+  --color-bark: #5C4633;
+  --color-sand: #F7EFE6;
+}
+
 
 /* fallback styles so we can SEE if this file loads at all */
 html, body {

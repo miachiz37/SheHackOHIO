@@ -1,30 +1,31 @@
-// server/firebaseAdmin.js
+// Backend/server/firebaseAdmin.js
 
 import admin from "firebase-admin";
-import dotenv from "dotenv";
-import path from "path";
-import { fileURLToPath } from "url";
+import { config } from "dotenv";
 
+// Load environment variables from Backend/.env
+config({ path: new URL("../.env", import.meta.url).pathname });
 
-// Resolve absolute path to Backend/.env
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-const envPath = path.resolve(__dirname, "../.env");
+// Validate env variables
+const { FIREBASE_PROJECT_ID, FIREBASE_CLIENT_EMAIL, FIREBASE_PRIVATE_KEY } = process.env;
 
-dotenv.config({ path: envPath });
-const rawKey = process.env.FIREBASE_PRIVATE_KEY;
-if (!rawKey) {
-  console.error("FIREBASE_PRIVATE_KEY is missing. Loaded env keys:", Object.keys(process.env));
+if (!FIREBASE_PRIVATE_KEY) {
+  console.error("❌ FIREBASE_PRIVATE_KEY is missing. Loaded keys:", Object.keys(process.env));
   throw new Error("FIREBASE_PRIVATE_KEY is missing");
 }
+
+// Initialize Firebase Admin if not already initialized
 if (!admin.apps.length) {
   admin.initializeApp({
     credential: admin.credential.cert({
-      projectId: process.env.FIREBASE_PROJECT_ID,
-      clientEmail: process.env.FIREBASE_CLIENT_EMAIL,
-      privateKey: process.env.FIREBASE_PRIVATE_KEY.replace(/\\n/g, "\n"),
+      projectId: FIREBASE_PROJECT_ID,
+      clientEmail: FIREBASE_CLIENT_EMAIL,
+      // Convert literal '\n' to actual newlines
+      privateKey: FIREBASE_PRIVATE_KEY.replace(/\\n/g, "\n"),
     }),
   });
+  console.log("✅ Firebase Admin initialized");
 }
 
+// Export Firestore reference
 export const db = admin.firestore();
