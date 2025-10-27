@@ -39,21 +39,23 @@ The prototype includes a frontend built with React (Vite, Zustand, and TailwindC
 ---
 
 ## Project Structure
+
+```plaintext
 SheHackOHIO/
-├── Frontend/ # React + Vite application
-│ ├── src/
-│ │ ├── pages/ # Login, Onboarding, Plan, etc.
-│ │ ├── store/ # Zustand global store
-│ │ ├── firebasebackend/ # Firebase client configuration
-│ │ └── index.css # TailwindCSS + custom theme
-│ └── vite.config.js
+├── Frontend/                  # React + Vite application
+│   ├── src/
+│   │   ├── pages/             # Login, Onboarding, Plan, etc.
+│   │   ├── store/             # Zustand global store
+│   │   ├── firebasebackend/   # Firebase client configuration
+│   │   └── index.css          # TailwindCSS + custom theme
+│   └── vite.config.js
 │
-├── Backend/ # Express + Firebase Admin API
-│ ├── server/
-│ │ ├── index.js # Main server entry point
-│ │ └── firebaseAdmin.js # Admin SDK setup
-│ ├── .env # Environment variables (not tracked)
-│ └── package.json
+├── Backend/                   # Express + Firebase Admin API
+│   ├── server/
+│   │   ├── index.js           # Main server entry point
+│   │   └── firebaseAdmin.js   # Admin SDK setup
+│   ├── .env                   # Environment variables (not tracked)
+│   └── package.json
 │
 └── README.md
 
