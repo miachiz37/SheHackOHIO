@@ -1,19 +1,21 @@
 # HackOHI/O – Team She++
 PantryPal Prototype
 
-Contributors
-Harker LeCroy – Firebase integration, full-stack developer
-Mia Chizever – Frontend setup
-Dani Bolton - AI and data modeling
-Andi Stewart - Backend setup
+---
 
-PantryPal is a prototype developed for HackOHI/O -- a 24-hour hackathon at Ohio state (10/25/25 and 10/26/25). PantryPal is an AI tool that allows users to have user preferences saved from a one time signup. After that, at any time users can input ingredients they currently possess, and PantryPal will output recipes they can make with said ingredients that align with there food preferences and goals, as well as learning user likes and dislikes.   
-
-This project demonstrates a full-stack application built with React, Node.js, Firebase, and Express.
+## Contributors:
+**Harker LeCroy** – Firebase integration, full-stack developer
+**Mia Chizever** – Frontend setup
+**Dani Bolton** - AI and data modeling
+**Andi Stewart** - Backend setup
 
 ---
 
 ## Overview
+
+PantryPal is a prototype developed for HackOHI/O -- a 24-hour hackathon at Ohio state (10/25/25 and 10/26/25). PantryPal is an AI tool that allows users to have user preferences saved from a one time signup. After that, at any time users can input ingredients they currently possess, and PantryPal will output recipes they can make with said ingredients that align with there food preferences and goals, as well as learning user likes and dislikes.   
+
+This project demonstrates a full-stack application built with React, Node.js, Firebase, and Express.
 
 The prototype includes a frontend built with React (Vite, Zustand, and TailwindCSS v4) and a backend powered by Node.js, Express, and Firebase Admin SDK.
 
@@ -55,50 +57,64 @@ SheHackOHIO/
 │
 └── README.md
 
+---
+
 ## Local Setup
 
-1. Clone the repository
+### 1. Clone the repository
 ```bash
 git clone https://github.com/miachiz37/SheHackOHIO.git
 cd SheHackOHIO
+```
 
-2. Install dependencies
-
+### 2. Install dependencies
 Install separately for the backend and frontend:
+```bash
 cd Backend && npm install
 cd ../Frontend && npm install
+```
 
-3. Configure environment variables
-
-Create a .env file inside Backend/:
+### 3. Configure environment variables
+Create a `.env` file inside `Backend/`:
+```bash
 PORT=8080
 FIREBASE_PROJECT_ID=your-project-id
 FIREBASE_CLIENT_EMAIL=firebase-adminsdk@your-project-id.iam.gserviceaccount.com
 FIREBASE_PRIVATE_KEY="-----BEGIN PRIVATE KEY-----\nYOURKEYDATA\n-----END PRIVATE KEY-----\n"
+```
 
-4. Run the backend
+### 4. Run the backend
+```bash
 cd Backend
 npm run dev
-//Expected output:
+```
+Expected output:
+```
 Firebase Admin initialized
 Server listening on port 8080
+```
 
-5. Run the frontend
+### 5. Run the frontend
+```bash
 cd Frontend
 npm run dev
+```
+Then open [http://localhost:5173](http://localhost:5173) in your browser.
 
-Then open http://localhost:5173
- in your browser.
+---
 
+## Current Features
 
-## Current features
-- User authentication with Firebase
-- User profile creation through backend /api/users
-- Pantry and dietary preference management via Zustand store
-- Basic recipe recommendations based on pantry items and preferences
-- TailwindCSS v4 custom theme and responsive layout
+- User authentication with Firebase  
+- User profile creation through backend `/api/users`  
+- Pantry and dietary preference management via Zustand store  
+- Basic recipe recommendations based on pantry items and preferences  
+- TailwindCSS v4 custom theme and responsive layout  
 
-##Future Improvements
-- Enhance UI design and responsiveness
-- Implement cloud deployment (Vercel + Render)
+---
+
+## Future Improvements
+
+- Enhance UI design and responsiveness  
+- Implement cloud deployment (Vercel + Render)  
 - Improve communication with AI features and rest of project
